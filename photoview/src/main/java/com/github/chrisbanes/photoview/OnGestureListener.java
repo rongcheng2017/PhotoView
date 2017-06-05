@@ -16,12 +16,32 @@
 package com.github.chrisbanes.photoview;
 
 interface OnGestureListener {
-
+    /**
+     * 拖动
+     *
+     * @param dx
+     * @param dy
+     */
     void onDrag(float dx, float dy);
 
+    /**
+     * 扔
+     *
+     * @param startX
+     * @param startY
+     * @param velocityX
+     * @param velocityY
+     */
     void onFling(float startX, float startY, float velocityX,
                  float velocityY);
 
+    /**
+     * 缩放
+     *
+     * @param scaleFactor
+     * @param focusX
+     * @param focusY
+     */
     void onScale(float scaleFactor, float focusX, float focusY);
 
 }

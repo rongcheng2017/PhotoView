@@ -25,18 +25,45 @@ import android.view.ViewConfiguration;
  * Does a whole lot of gesture detecting.
  */
 class CustomGestureDetector {
-
+    /**
+     * 无效指针ID
+     */
     private static final int INVALID_POINTER_ID = -1;
-
+    /**
+     * 活动指针ID
+     */
     private int mActivePointerId = INVALID_POINTER_ID;
+    /**
+     * 活动指针指数
+     */
     private int mActivePointerIndex = 0;
+    /**
+     * 使用MotionEvent来检测缩放变换手势,然后通过 OnScaleGestureListener 回调来通知用户特定的已发生手势
+     */
     private final ScaleGestureDetector mDetector;
-
+    /**
+     * 速度跟踪器
+     */
     private VelocityTracker mVelocityTracker;
+    /**
+     * 是否正在拖拽
+     */
     private boolean mIsDragging;
+    /**
+     * 持续触摸的X
+     */
     private float mLastTouchX;
+    /**
+     * 持续触摸的Y
+     */
     private float mLastTouchY;
+    /**
+     * 触碰
+     */
     private final float mTouchSlop;
+    /**
+     * 最小随度
+     */
     private final float mMinimumVelocity;
     private OnGestureListener mListener;
 

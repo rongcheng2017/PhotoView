@@ -52,12 +52,15 @@ public class PhotoViewAttacher implements View.OnTouchListener,
     private static final int EDGE_BOTH = 2;
     private static int SINGLE_TOUCH = 1;
 
+    //插补器
     private Interpolator mInterpolator = new AccelerateDecelerateInterpolator();
+    //缩放持续时间
     private int mZoomDuration = DEFAULT_ZOOM_DURATION;
     private float mMinScale = DEFAULT_MIN_SCALE;
     private float mMidScale = DEFAULT_MID_SCALE;
     private float mMaxScale = DEFAULT_MAX_SCALE;
 
+    // TODO: 17-5-19 目前不清楚这两个参数干嘛的
     private boolean mAllowParentInterceptOnEdge = true;
     private boolean mBlockParentIntercept = false;
 
@@ -75,7 +78,8 @@ public class PhotoViewAttacher implements View.OnTouchListener,
     private final float[] mMatrixValues = new float[9];
 
     // Listeners
-    private OnMatrixChangedListener mMatrixChangeListener;
+    private OnMatrixChangedListener mMatrixChangeListener;//矩阵变化监听
+
     private OnPhotoTapListener mPhotoTapListener;
     private OnOutsidePhotoTapListener mOutsidePhotoTapListener;
     private OnViewTapListener mViewTapListener;
